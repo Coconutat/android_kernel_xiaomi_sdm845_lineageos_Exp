@@ -21,7 +21,7 @@ start_time=$(date +%Y.%m.%d-%I_%M)
 
 start_time_sum=$(date +%s)
 
-make ARCH=arm64 O=out CC=clang generic_lineageos_ksu_defconfig
+make ARCH=arm64 O=out CC=clang vendor/xiaomi/mi845_mod_defconfig vendor/xiaomi/extra.config vendor/xiaomi/ursa.config
 # 定义编译线程数
 make ARCH=arm64 O=out CC=clang -j$(nproc --all) 2>&1 | tee kernel_log-${start_time}.txt
 
