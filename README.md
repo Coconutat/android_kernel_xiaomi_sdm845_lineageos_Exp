@@ -9,4 +9,6 @@ Compiler:[Proton-Clang](https://github.com/kdrag0n/proton-clang)
 ***  
 ## Warning:
 **Only For learning and testing purposes only, and cannot be used for purposes that violate local laws and regulations.**  
+## Warning 2:   
+**Starting from June 2024, KernelSU has abandoned support for old devices. The final version of KernelSU code that supports old devices is v0.9.5 (11872).**  
 ***  
