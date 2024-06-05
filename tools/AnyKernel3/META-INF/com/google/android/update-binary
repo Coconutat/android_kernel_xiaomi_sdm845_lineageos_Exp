@@ -537,7 +537,7 @@ if [ $? != 0 -o -z "$(ls bin)" ]; then
   abort "Busybox setup failed. Aborting...";
 fi;
 OLD_PATH="$PATH";
-export PATH="$AKHOME/bin:$AKHOME/tools:$PATH";
+export PATH="$AKHOME/tools:$AKHOME/bin:$PATH";
 
 if [ -f banner ]; then
   ui_printfile banner;
