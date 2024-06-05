@@ -12,3 +12,5 @@ Compiler:[Proton-Clang](https://github.com/kdrag0n/proton-clang)
 ## Warning 2:   
 **Starting from June 2024, KernelSU has abandoned support for old devices. The final version of KernelSU code that supports old devices is v0.9.5 (11872).**  
 ***  
+### Little Tips:  
+**If you install KSU Manager and it shows that it is not supported, please download v0.9.5 Manager and then v1.0.0 Manager. First install the v0.9.5 manager, then open it once, and then update it to the v1.0.0 manager.**  
