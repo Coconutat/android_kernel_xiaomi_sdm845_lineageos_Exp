@@ -57,9 +57,11 @@ if [ -f out/arch/arm64/boot/Image.gz-dtb ]; then
 	echo " "
 	echo "***Sucessfully built kernel...***"
 	echo " "
+	git reset --hard
 	exit 0
 else
 	echo " "
 	echo "***Failed!***"
+	git reset --hard
 	exit 0
 fi
