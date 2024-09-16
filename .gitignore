@@ -130,7 +130,7 @@ Android.bp
 # KernelSU
 drivers/kernelsu
 KernelSU
-kernel_log-*.txt
+kernel_log-*.log
 Image.gz*
 *.zip
 drivers/input/sensors/smi130/modules.order
