@@ -8,7 +8,7 @@ else
     echo "KernelSU Folder not found, proceeding..."
 fi
 
-read -p "Please enter the version number (A/a is tags version.B/b is main version.): " version
+read -p "Please enter the version number (A/a is tags version.B/b is main version.C/c is KernelSU Next): " version
 
 if [ "$version" == "" ]; then
     echo "No version specified. Exiting."
@@ -22,6 +22,9 @@ case $version in
         ;;
     [Bb]*)
         curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
+        ;;
+    [Cc]*)
+        curl -LSs "https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh" | bash -
         ;;
     *)
         echo "Invalid option. Exiting."

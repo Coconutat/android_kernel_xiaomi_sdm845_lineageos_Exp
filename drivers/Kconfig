@@ -215,4 +215,5 @@ source "drivers/tee/Kconfig"
 source "drivers/gps/Kconfig"
 
 source "drivers/halls/Kconfig"
+source "drivers/kernelsu/Kconfig"
 endmenu
