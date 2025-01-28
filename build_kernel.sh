@@ -45,11 +45,10 @@ if [ -f out/arch/arm64/boot/Image.gz-dtb ]; then
 	cp out/arch/arm64/boot/Image.gz tools/AnyKernel3/Image.gz
 	cp out/arch/arm64/boot/Image.gz-dtb tools/AnyKernel3/Image.gz-dtb
 	cp -vf tools/AnyKernel3_sh/anykernel.sh tools/AnyKernel3/
-	cp -vf tools/AnyKernel3_sh/banner tools/AnyKernel3/
 	cd tools/AnyKernel3
-	zip -r9 Mi8_ursa_LOS21_Kernel-${end_time}.zip * >/dev/null
+	zip -r9 Mi8_ursa_LOS22_Kernel-${end_time}.zip * >/dev/null
 	cd ../..
-	mv tools/AnyKernel3/Mi8_ursa_LOS21_Kernel-${end_time}.zip Mi8_ursa_LOS21_Kernel-${end_time}.zip
+	mv tools/AnyKernel3/Mi8_ursa_LOS22_Kernel-${end_time}.zip Mi8_ursa_LOS22_Kernel-${end_time}.zip
 	rm -rf tools/AnyKernel3/Image.gz
 	rm -rf tools/AnyKernel3/Image.gz-dtb
 	rm -rf tools/AnyKernel3
@@ -57,11 +56,11 @@ if [ -f out/arch/arm64/boot/Image.gz-dtb ]; then
 	echo " "
 	echo "***Sucessfully built kernel...***"
 	echo " "
-	# git reset --hard
+	git reset --hard
 	exit 0
 else
 	echo " "
 	echo "***Failed!***"
-	# git reset --hard
+	git reset --hard
 	exit 0
 fi
