@@ -9,3 +9,7 @@ Compiler:[Zyc-Clang 20](https://github.com/ZyCromerZ/Clang/releases/tag/20.0.0gi
 ***  
 KernelSU now Switch to [KernelSU-Next](https://github.com/rifsxd/KernelSU-Next).  
 Please find the [KernelSU-Next's Manager in here.](https://github.com/rifsxd/KernelSU-Next/releases).  
+***
+## Little Tips:
+  
+If you install KSU Manager and it shows that it is not supported, please download Manager install it and open it once then reinstall it.  
