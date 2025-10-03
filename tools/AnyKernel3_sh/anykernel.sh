@@ -10,19 +10,17 @@ do.cleanup=1
 do.cleanuponabort=0
 device.name1=ursa
 device.name2=equuleus
-device.name3=dipper
+device.name3=
 supported.versions=
 supported.patchlevels=
 '; } # end properties
 
 ## boot shell variables
 ## boot shell variables
-block=/dev/block/bootdevice/by-name/boot;
-is_slot_device=auto;
-ramdisk_compression=auto;
-patch_vbmeta_flag=auto;
-no_magisk_check=1;
-NO_VBMETA_PARTITION_PATCH=1;
+BLOCK=auto;
+IS_SLOT_DEVICE=auto;
+RAMDISK_COMPRESSION=auto;
+PATCH_VBMETA_FLAG=auto;
 
 # import functions/variables and setup patching - see for reference (DO NOT REMOVE)
 . tools/ak3-core.sh
