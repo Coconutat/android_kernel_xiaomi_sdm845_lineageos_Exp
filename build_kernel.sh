@@ -2,7 +2,7 @@
 #设置环境
 
 # 交叉编译器路径
-export PATH=$PATH:$(pwd)/../Compiler/ZyC_clang_16/bin
+export PATH=$PATH:$(pwd)/../Compiler/Zyc_Clang_16/bin
 export CC=clang
 export CLANG_TRIPLE=aarch64-linux-gnu-
 export CROSS_COMPILE=aarch64-linux-gnu-
@@ -56,13 +56,11 @@ if [ -f out/arch/arm64/boot/Image.gz-dtb ]; then
 	echo " "
 	echo "***Sucessfully built kernel...***"
 	echo " "
-	rm -rf KernelSU-Next
 	git reset --hard
 	exit 0
 else
 	echo " "
 	echo "***Failed!***"
-	rm -rf KernelSU-Next
 	git reset --hard
 	exit 0
 fi
