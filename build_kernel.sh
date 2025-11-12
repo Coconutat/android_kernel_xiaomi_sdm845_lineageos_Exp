@@ -46,7 +46,7 @@ esac
 # define end
 
 # 定义编译线程数
-make ARCH=arm64 O=out "ccache clang" -j$(nproc --all) 2>&1 | tee kernel_log-${start_time}.log
+make ARCH=arm64 O=out CC="ccache clang" -j$(nproc --all) 2>&1 | tee kernel_log-${start_time}.log
 
 end_time_sum=$(date +%s)
 
