@@ -123,3 +123,11 @@ kernel/configs/android-*.cfg
 #Ignoring Android.bp link file
 #
 Android.bp
+
+# Personal
+kernel_log-*.log
+KernelSU
+drivers/kernelsu
+*.zip
+tools/AnyKernel3
+out/
