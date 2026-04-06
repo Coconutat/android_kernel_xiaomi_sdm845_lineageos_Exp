@@ -2,7 +2,7 @@
 #设置环境
 
 # 交叉编译器路径
-export PATH=$PATH:$(pwd)/../Compiler/Zyc_Clang_16/bin
+export PATH=$PATH:$(pwd)/../Compiler/Zyc_Clang_20/bin
 CC="ccache clang"
 export CLANG_TRIPLE=aarch64-linux-gnu-
 export CROSS_COMPILE=aarch64-linux-gnu-
