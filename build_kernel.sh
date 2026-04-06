@@ -31,11 +31,11 @@ if [ "$version" == "" ]; then
 fi
 case $version in
     [Aa]*)
-		make ARCH=arm64 O=out CC="ccache clang" vendor/xiaomi/mi845_mod_defconfig vendor/xiaomi/extra.config vendor/xiaomi/ursa.config
+		make ARCH=arm64 O=out CC="ccache clang" vendor/xiaomi/mi845_defconfig vendor/xiaomi/extra.config vendor/xiaomi/ursa.config
 		device_name=ursa
 		;;
 	[Bb]*)
-        make ARCH=arm64 O=out CC="ccache clang" vendor/xiaomi/mi845_mod_defconfig vendor/xiaomi/extra.config vendor/xiaomi/dipper.config
+        make ARCH=arm64 O=out CC="ccache clang" vendor/xiaomi/mi845_defconfig vendor/xiaomi/extra.config vendor/xiaomi/dipper.config
 		device_name=dipper
     	;;
 	*)
