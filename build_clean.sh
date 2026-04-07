@@ -3,9 +3,19 @@
 # 开始运行
 echo "开始清理编译残留..."
 start_time_sum=$(date +%s)
+export PATH="$(pwd)/../Compiler/Google/clang-r547379/bin:$PATH"
+export CC=clang
+export CLANG_TRIPLE=aarch64-linux-gnu-
+export CROSS_COMPILE=aarch64-linux-gnu-
+export CROSS_COMPILE_ARM32=arm-linux-gnueabi-
+export CONFIG_BUILD_ARM64_DT_OVERLAY=y
+
+export ARCH=arm64
+export SUBARCH=arm64
+# export DTC_EXT=dtc
 
 rm -rf out
-make ARCH=arm64 distclean
+make CC=clang ARCH=arm64 distclean
 
 end_time_sum=$(date +%s)
 
