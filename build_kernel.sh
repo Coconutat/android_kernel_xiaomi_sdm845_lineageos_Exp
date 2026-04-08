@@ -2,8 +2,11 @@
 #设置环境
 
 # 交叉编译器路径
-export PATH=$PATH:$(pwd)/../Compiler/Zyc_Clang_20/bin
-export CC="ccache clang"
+export PATH="$(pwd)/../Compiler/Google/clang-r547379/bin:$PATH"
+export CC=clang
+export LD=ld.lld
+export LLVM=1
+export LLVM_IAS=1
 export CLANG_TRIPLE=aarch64-linux-gnu-
 export CROSS_COMPILE=aarch64-linux-gnu-
 export CROSS_COMPILE_ARM32=arm-linux-gnueabi-
@@ -31,11 +34,11 @@ if [ "$version" == "" ]; then
 fi
 case $version in
     [Aa]*)
-		make ARCH=arm64 O=out CC="ccache clang" vendor/xiaomi/mi845_defconfig vendor/xiaomi/extra.config vendor/xiaomi/ursa.config
+		make ARCH=arm64 O=out CC=clang LD=ld.lld LLVM=1 LLVM_IAS=1 vendor/xiaomi/mi845_defconfig vendor/xiaomi/extra.config vendor/xiaomi/ursa.config
 		device_name=ursa
 		;;
 	[Bb]*)
-        make ARCH=arm64 O=out CC="ccache clang" vendor/xiaomi/mi845_defconfig vendor/xiaomi/extra.config vendor/xiaomi/dipper.config
+        make ARCH=arm64 O=out CC=clang LD=ld.lld LLVM=1 LLVM_IAS=1 vendor/xiaomi/mi845_defconfig vendor/xiaomi/extra.config vendor/xiaomi/dipper.config
 		device_name=dipper
     	;;
 	*)
@@ -46,7 +49,7 @@ esac
 # define end
 
 # 定义编译线程数
-make ARCH=arm64 O=out CC="ccache clang" -j$(nproc --all) 2>&1 | tee kernel_log-${start_time}.log
+make ARCH=arm64 O=out CC=clang LD=ld.lld LLVM=1 LLVM_IAS=1 -j$(nproc --all) 2>&1 | tee kernel_log-${start_time}.log
 
 end_time_sum=$(date +%s)
 
@@ -79,11 +82,11 @@ if [ -f out/arch/arm64/boot/Image.gz-dtb ]; then
 	echo " "
 	echo "***Sucessfully built kernel...***"
 	echo " "
-	git reset --hard
+	# git reset --hard
 	exit 0
 else
 	echo " "
 	echo "***Failed!***"
-	git reset --hard
+	# git reset --hard
 	exit 0
 fi

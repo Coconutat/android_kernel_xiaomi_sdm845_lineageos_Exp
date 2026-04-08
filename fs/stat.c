@@ -66,8 +66,7 @@ int vfs_getattr_nosec(struct path *path, struct kstat *stat)
 	if (inode->i_op->getattr)
 	#ifdef CONFIG_KSU_SUSFS_SUS_KSTAT
 	{
-		int err = inode->i_op->getattr(path, stat, request_mask,
-					    query_flags);
+		int err = inode->i_op->getattr(path->mnt, path->dentry, stat);  // for xiaomi sdm845
 		if (!err)
 			susfs_sus_kstat_spoof_generic_fillattr(inode, stat);
 		return err;
