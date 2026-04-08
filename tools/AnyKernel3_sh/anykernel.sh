@@ -2,7 +2,7 @@
 ## osm0sis @ xda-developers
 
 properties() { '
-kernel.string=Xiaomi Mi 8 Explorer Edition Kernel Mod For LineageOS 22+ Version -- Kernel MOD & Compile by Coconutat @ Github
+kernel.string=Xiaomi Mi 8 Series Kernel Mod For LineageOS 22+ Version -- Kernel MOD & Compile by Coconutat @ Github
 do.devicecheck=1
 do.modules=0
 do.systemless=1
@@ -10,7 +10,7 @@ do.cleanup=1
 do.cleanuponabort=0
 device.name1=ursa
 device.name2=equuleus
-device.name3=
+device.name3=dipper
 supported.versions=
 supported.patchlevels=
 '; } # end properties
