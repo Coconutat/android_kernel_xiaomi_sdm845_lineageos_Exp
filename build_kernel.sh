@@ -77,16 +77,12 @@ if [ -f out/arch/arm64/boot/Image.gz-dtb ]; then
 	mv tools/AnyKernel3/Mi8_${device_name}_LOS22_Kernel-${end_time}.zip Mi8_${device_name}_LOS22_Kernel-${end_time}.zip
 	rm -rf tools/AnyKernel3/Image.gz
 	rm -rf tools/AnyKernel3/Image.gz-dtb
-	rm -rf tools/AnyKernel3
-	bash syncanykernel3.sh
 	echo " "
 	echo "***Sucessfully built kernel...***"
 	echo " "
-	# git reset --hard
 	exit 0
 else
 	echo " "
 	echo "***Failed!***"
-	# git reset --hard
 	exit 0
 fi
