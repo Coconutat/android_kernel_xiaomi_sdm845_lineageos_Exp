@@ -9,7 +9,7 @@
 #include <linux/susfs_def.h>
 #include <linux/statfs.h>
 
-#define SUSFS_VERSION "v2.1.0"
+#define SUSFS_VERSION "v2.3.0"
 #if LINUX_VERSION_CODE < KERNEL_VERSION(5,0,0)
 #define SUSFS_VARIANT "NON-GKI"
 #else
@@ -94,11 +94,13 @@ struct st_susfs_sus_kstat {
 };
 
 struct st_susfs_sus_kstat_hlist {
+	struct hlist_node                       node;
 	unsigned long                           target_ino;
 	unsigned long                           target_dev;
+	struct kstatfs                          spoofed_kstatfs;
+	int                                     spoofed_mnt_id;
 	bool                                    is_fuse;
 	struct st_susfs_sus_kstat               info;
-	struct hlist_node                       node;
 };
 #endif
 
@@ -137,6 +139,7 @@ struct st_susfs_open_redirect {
 };
 
 struct st_susfs_open_redirect_hlist {
+	struct hlist_node                       node;
 	unsigned long                           target_ino;
 	unsigned long                           target_dev;
 	unsigned long                           redirected_ino;
@@ -145,7 +148,6 @@ struct st_susfs_open_redirect_hlist {
 	struct kstatfs                          spoofed_kstatfs;
 	struct st_susfs_open_redirect           info;
 	bool                                    reversed_lookup_only;
-	struct hlist_node                       node;
 };
 #endif
 
@@ -215,7 +217,6 @@ void susfs_enable_log(void __user **user_info);
 /* spoof_cmdline_or_bootconfig */
 #ifdef CONFIG_KSU_SUSFS_SPOOF_CMDLINE_OR_BOOTCONFIG
 void susfs_set_cmdline_or_bootconfig(void __user **user_info);
-int susfs_spoof_cmdline_or_bootconfig(struct seq_file *m);
 #endif
 
 /* open_redirect */
