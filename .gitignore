@@ -131,3 +131,4 @@ drivers/kernelsu
 *.zip
 tools/AnyKernel3
 out/
+SDK
