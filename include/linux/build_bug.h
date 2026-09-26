@@ -30,6 +30,12 @@
 #define BUILD_BUG_ON_NULL(e) ((void *)sizeof(struct { int:(-!!(e)); }))
 
 /*
+ * Compile time assertion
+ */
+#define static_assert(expr, ...) __static_assert(expr, ##__VA_ARGS__, #expr)
+#define __static_assert(expr, msg, ...) _Static_assert(expr, msg)
+
+/*
  * BUILD_BUG_ON_INVALID() permits the compiler to check the validity of the
  * expression but avoids the generation of any code, even if that expression
  * has side-effects.
