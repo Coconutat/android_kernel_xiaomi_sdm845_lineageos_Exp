@@ -64,8 +64,8 @@ case $version in
         curl $CURL_OPTS "https://raw.githubusercontent.com/backslashxx/KernelSU/master/kernel/setup.sh" | bash -s master
         ;;
     [Ee]*)
-        echo "Installing ReSukiSU (main)..."
-        curl $CURL_OPTS "https://raw.githubusercontent.com/ReSukiSU/ReSukiSU/main/kernel/setup.sh" | bash
+        echo "Installing BakaSU (main)..."
+        curl $CURL_OPTS "https://raw.githubusercontent.com/Baka-SU/BakaSU/main/kernel/setup.sh" | bash
         ;;
     *)
         echo "Invalid option: $version. Exiting."
