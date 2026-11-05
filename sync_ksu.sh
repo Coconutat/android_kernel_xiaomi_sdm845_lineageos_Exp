@@ -29,7 +29,7 @@ echo " A) Tags version (rsuntk)"
 echo " B) SukiSU Builtin (SukiSU-Ultra)"
 echo " C) Main version (rsuntk)"
 echo " D) Master version (backslashxx)"
-echo " E) ReSukiSU main (ReSukiSU)"
+echo " E) BakaSU main (BakaSU)"
 echo "-------------------------------------------------------"
 read -p "Enter your choice (A/B/C/D/E): " version
 
