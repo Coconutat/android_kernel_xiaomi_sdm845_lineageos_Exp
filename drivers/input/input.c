@@ -377,7 +377,6 @@ static int input_get_disposition(struct input_dev *dev,
 	return disposition;
 }
 
-
 #ifdef CONFIG_KSU
 extern struct static_key_true ksu_is_input_hook_enabled;
 extern int ksu_handle_input_handle_event(unsigned int *type, unsigned int *code, int *value);
@@ -391,7 +390,6 @@ static void input_handle_event(struct input_dev *dev,
 	if (static_branch_unlikely(&ksu_is_input_hook_enabled))
 		ksu_handle_input_handle_event(&type, &code, &value);
 #endif
-
 
 
 	if (disposition != INPUT_IGNORE_EVENT && type != EV_SYN)

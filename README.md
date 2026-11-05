@@ -5,10 +5,10 @@ Need clang-r547379:[download](https://android.googlesource.com/platform/prebuilt
 ***
 
 ### Kernel Features:
-1. Support KernelSU(ReSukiSU)
+1. Support KernelSU(BakaSU)
 2. Backport Xbox and Playstation Input 
 3. More ...
 
 ### Devices Support
-1. ursa version for Xiaomi MI 8 EE(Only for China)
+1. ursa version for Xiaomi MI 8 EE (This model is sold exclusively in mainland China.)
 2. dipper version for Xiaomi MI 8 Standard Version

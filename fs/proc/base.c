@@ -1825,7 +1825,6 @@ out:
 	return ERR_PTR(error);
 }
 
-
 #ifdef CONFIG_KSU_SUSFS_OPEN_REDIRECT
 extern int susfs_open_redirect_spoof_do_proc_readlink(struct inode *inode, char *tmp_buf, int buflen);
 #endif

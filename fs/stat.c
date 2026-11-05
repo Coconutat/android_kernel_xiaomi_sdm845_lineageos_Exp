@@ -27,11 +27,9 @@ extern void ksu_handle_vfs_fstat(int fd, loff_t *kstat_size_ptr);
 extern struct static_key_true ksu_su_compat_enabled;
 extern bool __ksu_is_allow_uid_for_current(uid_t uid);
 extern int ksu_handle_stat(int *dfd, struct filename **filename, int *flags);
-extern int filename_lookup(int dfd, struct filename *name, unsigned flags,
-				struct path *path, struct path *root);
 #endif // #ifdef CONFIG_KSU_SUSFS
 
-#if defined(CONFIG_KSU_SUSFS_SUS_KSTAT) || defined(CONFIG_KSU_SUSFS_SUS_MOUNT)
+#if defined(CONFIG_KSU_SUSFS_SUS_KSTAT)
 #include <linux/susfs_def.h>
 #endif
 
@@ -92,7 +90,8 @@ int vfs_getattr_nosec(struct path *path, struct kstat *stat)
 	if (inode->i_op->getattr)
 #ifdef CONFIG_KSU_SUSFS_SUS_KSTAT
 	{
-		int err = inode->i_op->getattr(path->mnt, path->dentry, stat);  // for xiaomi sdm845
+		int err = inode->i_op->getattr(path->mnt, path->dentry, stat);
+
 		if (!err) {
 			if (sus_kstat)
 				susfs_sus_kstat_spoof_generic_fillattr(inode, stat, STATX_SUS_KSTAT);
@@ -114,6 +113,7 @@ int vfs_getattr_nosec(struct path *path, struct kstat *stat)
 #else
 		return inode->i_op->getattr(path->mnt, path->dentry, stat);
 #endif
+
 	generic_fillattr(inode, stat);
 	return 0;
 }
@@ -150,7 +150,6 @@ int vfs_fstat(unsigned int fd, struct kstat *stat)
 }
 EXPORT_SYMBOL(vfs_fstat);
 
-
 int vfs_fstatat(int dfd, const char __user *filename, struct kstat *stat,
 		int flag)
 {
@@ -159,6 +158,8 @@ int vfs_fstatat(int dfd, const char __user *filename, struct kstat *stat,
 	unsigned int lookup_flags = 0;
 #ifdef CONFIG_KSU_SUSFS
 	struct filename *fname = NULL;
+	extern int filename_lookup(int dfd, struct filename *name, unsigned flags,
+					struct path *path, struct path *root);
 #endif
 
 

@@ -591,7 +591,6 @@ static void s_stop(struct seq_file *m, void *p)
 {
 }
 
-
 static int s_show(struct seq_file *m, void *p)
 {
 	struct kallsym_iter *iter = m->private;
